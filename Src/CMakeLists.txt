@@ -7,7 +7,7 @@ cmake_minimum_required (VERSION 3.16.3)
 
 project(ntrip)
 
-set(CMAKE_CXX_FLAGS                "-Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -pthread")
+set(CMAKE_CXX_FLAGS                "-Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -pthread -laio")
 set(CMAKE_CXX_STANDARD 17)
 set(COMPILE_WARNING_MODE HIGH)
 
