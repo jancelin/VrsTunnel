@@ -1,3 +1,5 @@
+# docker build -t vrstunnel .
+# docker run --rm -it --entrypoint bash vrstunnel
 
 ARG DISTRO=debian
 ARG IMAGE_VERSION=bullseye
