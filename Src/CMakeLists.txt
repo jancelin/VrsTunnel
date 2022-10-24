@@ -83,7 +83,7 @@ add_test(NAME ${PROJECT_NAME}_TCppU COMMAND ${PROJECT_NAME}_CppUtest)
 
 set(testgsuite_src
 	${ntclient_src}
-	Tests/testGoo1.cpp
+	#Tests/testGoo1.cpp
 	Tests/gtestNmea.cpp
 	Tests/gtestNtripClient.cpp
 	Tests/gtestTcp.cpp
