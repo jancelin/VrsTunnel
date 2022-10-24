@@ -81,17 +81,17 @@ add_executable(${PROJECT_NAME}_CppUtest ${testcppu_src})
 target_link_libraries(${PROJECT_NAME}_CppUtest CppUTest pthread rt)
 add_test(NAME ${PROJECT_NAME}_TCppU COMMAND ${PROJECT_NAME}_CppUtest)
 
-set(testgsuite_src
-	${ntclient_src}
-	#Tests/testGoo1.cpp
-	Tests/gtestNmea.cpp
-	Tests/gtestNtripClient.cpp
-	Tests/gtestTcp.cpp
-	Tests/gtest_cli.cpp
-)
-add_executable(${PROJECT_NAME}_gtest ${testgsuite_src})
-target_link_libraries(${PROJECT_NAME}_gtest gtest gtest_main pthread rt)
-add_test(NAME ${PROJECT_NAME}_GTest COMMAND ${PROJECT_NAME}_gtest)
+#set(testgsuite_src
+#	${ntclient_src}
+#	Tests/testGoo1.cpp
+#	Tests/gtestNmea.cpp
+#	Tests/gtestNtripClient.cpp
+#	Tests/gtestTcp.cpp
+#	Tests/gtest_cli.cpp
+#)
+#add_executable(${PROJECT_NAME}_gtest ${testgsuite_src})
+#target_link_libraries(${PROJECT_NAME}_gtest gtest gtest_main pthread rt)
+#add_test(NAME ${PROJECT_NAME}_GTest COMMAND ${PROJECT_NAME}_gtest)
 
 add_custom_target(coverage
 	COMMAND make ${PROJECT_NAME}_gtest
