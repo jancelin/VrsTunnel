@@ -67,34 +67,34 @@ add_executable(ntcaster ntcaster.cpp ${ntcaster_src})
 # Unit Tests
 ################################################################################
 
-#enable_testing()
+enable_testing()
 
-#set(testcppu_src
-#	${ntclient_src}
-#	Ntrip/Src/tcp_server.cpp
-#	Tests/RunAllTests.cpp
-#	Tests/testU1.cpp
-#	Tests/TestEncoder.cpp
-#	Tests/TestTcpServer.cpp
-#)
-#add_executable(${PROJECT_NAME}_CppUtest ${testcppu_src})
-#target_link_libraries(${PROJECT_NAME}_CppUtest CppUTest pthread rt)
-#add_test(NAME ${PROJECT_NAME}_TCppU COMMAND ${PROJECT_NAME}_CppUtest)
+set(testcppu_src
+	${ntclient_src}
+	Ntrip/Src/tcp_server.cpp
+	Tests/RunAllTests.cpp
+	Tests/testU1.cpp
+	Tests/TestEncoder.cpp
+	Tests/TestTcpServer.cpp
+)
+add_executable(${PROJECT_NAME}_CppUtest ${testcppu_src})
+target_link_libraries(${PROJECT_NAME}_CppUtest CppUTest pthread rt)
+add_test(NAME ${PROJECT_NAME}_TCppU COMMAND ${PROJECT_NAME}_CppUtest)
 
-#set(testgsuite_src
-#	${ntclient_src}
-#	Tests/testGoo1.cpp
-#	Tests/gtestNmea.cpp
-#	Tests/gtestNtripClient.cpp
-#	Tests/gtestTcp.cpp
-#	Tests/gtest_cli.cpp
-#)
-#add_executable(${PROJECT_NAME}_gtest ${testgsuite_src})
-#target_link_libraries(${PROJECT_NAME}_gtest gtest gtest_main pthread rt)
-#add_test(NAME ${PROJECT_NAME}_GTest COMMAND ${PROJECT_NAME}_gtest)
+set(testgsuite_src
+	${ntclient_src}
+	Tests/testGoo1.cpp
+	Tests/gtestNmea.cpp
+	Tests/gtestNtripClient.cpp
+	Tests/gtestTcp.cpp
+	Tests/gtest_cli.cpp
+)
+add_executable(${PROJECT_NAME}_gtest ${testgsuite_src})
+target_link_libraries(${PROJECT_NAME}_gtest gtest gtest_main pthread rt)
+add_test(NAME ${PROJECT_NAME}_GTest COMMAND ${PROJECT_NAME}_gtest)
 
-#add_custom_target(coverage
-#	COMMAND make ${PROJECT_NAME}_gtest
-#	COMMAND ${CMAKE_BINARY_DIR}/${PROJECT_NAME}_gtest
-#	COMMAND gcovr -r ${CMAKE_SOURCE_DIR} --html --html-details -o cov.html ${CMAKE_BINARY_DIR}
-#)
+add_custom_target(coverage
+	COMMAND make ${PROJECT_NAME}_gtest
+	COMMAND ${CMAKE_BINARY_DIR}/${PROJECT_NAME}_gtest
+	COMMAND gcovr -r ${CMAKE_SOURCE_DIR} --html --html-details -o cov.html ${CMAKE_BINARY_DIR}
+)
