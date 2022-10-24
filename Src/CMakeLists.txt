@@ -7,7 +7,7 @@ cmake_minimum_required (VERSION 3.16.3)
 
 project(ntrip)
 
-set(CMAKE_CXX_FLAGS                "-Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -pthread -lrt")
+set(CMAKE_CXX_FLAGS                "-Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -pthread")
 set(CMAKE_CXX_STANDARD 17)
 set(COMPILE_WARNING_MODE HIGH)
 
@@ -50,7 +50,7 @@ add_executable(ntserver ntserver.cpp ${ntserver_src})
 target_link_libraries(ntserver rt)
 
 add_executable(ntcaster ntcaster.cpp ${ntcaster_src})
-
+target_link_libraries (ntcaster pthread rt)
 
 # set(caster_src
 # 	${ntrip_src}
