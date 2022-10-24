@@ -66,7 +66,6 @@ add_executable(ntcaster ntcaster.cpp ${ntcaster_src})
 ################################################################################
 # Unit Tests
 ################################################################################
-add_subdirectory(${CMAKE_BINARY_DIR}/googletest)
 
 enable_testing()
 
