@@ -4,7 +4,7 @@
 ARG DISTRO=debian
 ARG IMAGE_VERSION=bullseye
 ARG IMAGE_VARIANT=slim
-FROM $DISTRO:$IMAGE_VERSION-$IMAGE_VARIANT AS Ntrip-caster
+FROM $DISTRO:$IMAGE_VERSION-$IMAGE_VARIANT AS VRStunnel
 
 LABEL maintainer="Julien Ancelin<julien.ancelin@inrae.fr>"
 
